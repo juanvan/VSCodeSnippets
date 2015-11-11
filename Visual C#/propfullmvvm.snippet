@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>propfullmvvm</Title>
+			<Shortcut>propfullmvvm</Shortcut>
+			<Description>Code snippet for property and backing field with a SetProperty(ref _$property$, value)</Description>
+			<Author>Microsoft Corporation</Author>
+			<SnippetTypes>
+				<SnippetType>Expansion</SnippetType>
+			</SnippetTypes>
+		</Header>
+		<Snippet>
+			<Declarations>
+                <Literal>
+                    <ID>access</ID>
+                    <ToolTip>Access modifier</ToolTip>
+                    <Default>public</Default>
+                </Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>Property type</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
+					<ID>property</ID>
+					<ToolTip>Property name</ToolTip>
+					<Default>MyProperty</Default>
+				</Literal>
+        <Literal>
+          <ID>backproperty</ID>
+          <ToolTip>Backing Property name</ToolTip>
+          <Default>BackMyProperty</Default>
+        </Literal>
+				
+			</Declarations>
+			<Code Language="csharp">
+                <![CDATA[
+private $type$ $backproperty$;
+$access$ $type$ $property$
+{
+	get 
+    { 
+        return _$backproperty$;
+    }
+    
+	set 
+    { 
+        SetProperty(ref _$backproperty$, value);
+    }
+}$end$]]>
+			</Code>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
